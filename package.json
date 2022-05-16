@@ -1,0 +1,28 @@
+{
+  "name": "env-starter",
+  "version": "0.0.1",
+  "description": "",
+  "main": "./index.js",
+  "bin": {
+    "env-starter": "./index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/insikdev/env-starter.git"
+  },
+  "keywords": [],
+  "author": {
+    "name": "Insik Park",
+    "email": "insik.dev@gmail.com"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/insikdev/env-starter/issues"
+  },
+  "homepage": "https://github.com/insikdev/env-starter#readme",
+  "type": "module",
+  "dependencies": {
+    "inquirer": "^8.2.4",
+    "shelljs": "^0.8.5"
+  }
+}
