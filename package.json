@@ -1,14 +1,14 @@
 {
-  "name": "env-starter",
+  "name": "dev-starter",
   "version": "0.0.1",
   "description": "",
   "main": "./index.js",
   "bin": {
-    "env-starter": "./index.js"
+    "dev-starter": "./index.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/insikdev/env-starter.git"
+    "url": "git+https://github.com/insikdev/dev-starter.git"
   },
   "keywords": [],
   "author": {
@@ -17,9 +17,9 @@
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/insikdev/env-starter/issues"
+    "url": "https://github.com/insikdev/dev-starter/issues"
   },
-  "homepage": "https://github.com/insikdev/env-starter#readme",
+  "homepage": "https://github.com/insikdev/dev-starter#readme",
   "type": "module",
   "dependencies": {
     "inquirer": "^8.2.4",
