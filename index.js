@@ -20,20 +20,29 @@ inquirer
     shell.exec(command);
     generateConfigFile('eslint', 'airbnb');
     generateConfigFile('prettier');
+    generateConfigFile('vscode');
     console.log('\nDone');
   });
 
 function generateConfigFile(key, type = '') {
-  console.log(`Generate .${key}rc.json`);
   const BASE_URL =
     'https://raw.githubusercontent.com/insikdev/dev-starter/main';
   const options = {
-    eslint: `src/eslint/${type}.json`,
-    prettier: '.prettierrc.json'
+    eslint: { path: `src/eslint/${type}.json`, filename: '.eslintrc.json' },
+    prettier: { path: '.prettierrc.json', filename: '.prettierrc.json' },
+    vscode: { path: '.vscode/settings.json', filename: '.vscode/settings.json' }
   };
-  const requestURL = `${BASE_URL}/${options[key]}`;
+  console.log(`Generate ${options[key].filename}`);
+
+  if (options[key].filename.includes('/')) {
+    const dirPath = options[key].filename.split('/')[0];
+    const isExist = fs.existsSync(dirPath);
+    if (!isExist) fs.mkdirSync(dirPath);
+  }
+
+  const requestURL = `${BASE_URL}/${options[key].path}`;
   https.get(requestURL, (res) => {
-    const filePath = fs.createWriteStream(`.${key}rc.json`);
+    const filePath = fs.createWriteStream(options[key].filename);
     res.pipe(filePath);
     filePath.on('finish', () => filePath.close());
   });
