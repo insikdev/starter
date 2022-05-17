@@ -1,6 +1,6 @@
 {
   "name": "dev-starter",
-  "version": "0.0.1",
+  "version": "0.0.7",
   "description": "",
   "main": "./index.js",
   "bin": {
@@ -10,7 +10,10 @@
     "type": "git",
     "url": "git+https://github.com/insikdev/dev-starter.git"
   },
-  "keywords": [],
+  "keywords": [
+    "eslint",
+    "prettier"
+  ],
   "author": {
     "name": "Insik Park",
     "email": "insik.dev@gmail.com"
