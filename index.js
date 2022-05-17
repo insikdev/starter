@@ -12,13 +12,21 @@ inquirer
       name: 'package_manager',
       message: 'Choose package manager',
       choices: ['npm', 'yarn']
+    },
+    {
+      type: 'list',
+      name: 'type',
+      message: 'Choose project settings',
+      choices: ['browser-react-ts-airbnb', 'node-ts-airbnb']
     }
   ])
-  .then(({ package_manager }) => {
+  .then(({ package_manager, type }) => {
     console.log('Installing required modules...');
-    const command = `${manager[package_manager]} ${moduleList.join(' ')} -D`;
+    const command = `${manager[package_manager]} ${moduleList[type].join(
+      ' '
+    )} -D`;
     shell.exec(command);
-    generateConfigFile('eslint', 'airbnb');
+    generateConfigFile('eslint', type);
     generateConfigFile('prettier');
     generateConfigFile('vscode');
     console.log('\nDone');
