@@ -20,7 +20,7 @@ inquirer
     shell.exec(command);
     generateConfigFile('eslint', 'airbnb');
     generateConfigFile('prettier');
-    shell.echo('\nDone');
+    console.log('\nDone');
   });
 
 function generateConfigFile(key, type = '') {
